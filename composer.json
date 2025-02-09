@@ -1,14 +1,14 @@
 {
-    "name": "gearmagicru/gm-wd-tinymce",
-    "description": "Editor widget \"CodeMirror\"",
+    "name": "gearmagicru/gm-wd-breadcrumbs",
+    "description": "Site widget \"Breadcrumbs\"",
     "keywords": [
         "gm",
         "gearmagic",
         "site",
         "widget",
-        "codemirror"
+        "breadcrumbs"
     ],
-    "homepage": "https://apps.gearmagic.ru/component/gm-wd-codemirror",
+    "homepage": "https://apps.gearmagic.ru/component/gm-wd-breadcrumbs",
     "type": "component",
     "license": "MIT",
     "authors": [
@@ -23,7 +23,7 @@
     },
     "extra": {
         "gm": {
-            "id": "gm.wd.codemirror",
+            "id": "gm.wd.breadcrumbs",
             "vendor": "gm"
         }
     },
