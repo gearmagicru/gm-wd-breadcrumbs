@@ -1,40 +1,45 @@
-# <img src="https://raw.githubusercontent.com/gearmagicru/gm-wd-menu/refs/heads/master/assets/images/icon.svg" width="64px" height="64px" align="absmiddle"> Виджет "Меню"
+# <img src="https://raw.githubusercontent.com/gearmagicru/gm-wd-breadcrumbs/refs/heads/main/assets/images/icon.svg" width="64px" height="64px" align="absmiddle"> Виджет "Навигационная цепочка"
 
-Виджет предназначен для отображения многоуровневого меню с использованием вложенных HTML-списков на странице сайта.
+Виджет "Хлебные крошки" (навигационные цепочки, breadcrumbs) предназначен для отображения списка ссылок, указывающих положение текущей страницы  в иерархической структуре сайта.
+
+Например, "Главная / Категория / Статья". Элемент "Статья", является активным элементом указывающий на положение текущей страницы. Все остальные элементы, будут иметь ссылки.
+
+Для использования, необходимо укатать параметр "links" в конфигурации виджета.
+Пример:
+```
+echo $this->widget('gm.wd.breadcrumbs', [
+     'links' => [
+         [
+             'label' => 'Категория статьи',
+             'url'   => 'post-category'
+         ],
+         [
+              'label' => 'Статья'
+          ]
+     ]
+ ]);
+// или
+echo $this->widget('gm.wd.breadcrumbs:main', ['ui' => 'bootstrap5'])
+```
 
 ## Пример применения
 ### с менеджером виджетов:
 ```
-$menu = Gm::$app->widgets->get('gm.wd.menu', ['menuId' => 1]);
-$menu->run();
+$breadcrumbs = Gm::$app->widgets->get('gm.wd.breadcrumbs', ['ui' => 'bootstrap5']);
+$breadcrumbs->run();
 ```
 ### в шаблоне:
 ```
-echo $this->widget('gm.wd.menu', ['menuId' => 1]);
-// или
-echo $this->widget('gm.wd.menu:top', ['menuId' => 1])
+echo $this->widget('gm.wd.breadcrumbs', ['ui' => 'bootstrap5']);
 ```
 ### с namespace:
 ```
-use Gm\Widget\Menu\Widget as Menu;
-echo Menu::widget([
-    'items' => [
-        ['label' => 'Главная', 'url' => '/'],
-        [
-           'label' => 'Новости',
-           'url'   => '#',
-           'items' => [
-               ['label' => 'Спорт', 'url' => 'news/sport'],
-               ['label' => 'Игры',  'url' => 'news/games']
-           ]
-        ],
-        ['label' => 'Авторизация', 'url' => 'login', 'visible' => Gm::$app->user->isGuest()]
-    ]
-]);
+use Gm\Widget\Breadcrumbs\Widget as Breadcrumbs;
+echo Breadcrumbs::widget(['ui' => 'bootstrap5']);
 ```
 если namespace ранее не добавлен в PSR, необходимо выполнить:
 ```
-Gm::$loader->addPsr4('Gm\Widget\Menu\\', Gm::$app->modulePath . '/gm/gm.wd.menu/src');
+Gm::$loader->addPsr4('Gm\Widget\Breadcrumbs\\', Gm::$app->modulePath . '/gm/gm.wd.breadcrumbs/src');
 ```
 
 ## Установка
@@ -42,13 +47,13 @@ Gm::$loader->addPsr4('Gm\Widget\Menu\\', Gm::$app->modulePath . '/gm/gm.wd.menu/
 Для добавления виджета в ваш проект, вы можете просто выполнить команду ниже:
 
 ```
-$ composer require gearmagicru/gm-wd-menu
+$ composer require gearmagicru/gm-wd-breadcrumbs
 ```
 
 или добавить в файл composer.json вашего проекта:
 ```
 "require": {
-    "gearmagicru/gm-wd-menu": "*"
+    "gearmagicru/gm-wd-breadcrumbs": "*"
 }
 ```
 
