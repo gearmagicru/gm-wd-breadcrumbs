@@ -1,13 +1,7 @@
 {
     "name": "gearmagicru/gm-wd-breadcrumbs",
-    "description": "Site widget \"Breadcrumbs\"",
-    "keywords": [
-        "gm",
-        "gearmagic",
-        "site",
-        "widget",
-        "breadcrumbs"
-    ],
+    "description": "Website widget \"Breadcrumbs\"",
+    "keywords": ["gearmagic", "gm-panel", "gm-component", "gm-widget", "widget", "breadcrumbs"],
     "homepage": "https://apps.gearmagic.ru/component/gm-wd-breadcrumbs",
     "type": "component",
     "license": "MIT",
